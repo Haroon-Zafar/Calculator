@@ -66,15 +66,29 @@ class HomePageState extends State<HomePage> {
                   crossAxisCount: 4,
                 ),
                 itemBuilder: (BuildContext context, int index) {
-                  return MyButton(
-                    buttonText: buttons[index],
-                    color: isOperator(buttons[index])
-                        ? Colors.deepPurple
-                        : Colors.deepPurple[50],
-                    textColor: isOperator(buttons[index])
-                        ? Colors.white
-                        : Colors.deepPurple,
-                  );
+                  if (index == 0) {
+                    return MyButton(
+                      buttonText: buttons[index],
+                      color: Colors.green,
+                      textColor: Colors.white,
+                    );
+                  } else if (index == 1) {
+                    return MyButton(
+                      buttonText: buttons[index],
+                      color: Colors.red,
+                      textColor: Colors.white,
+                    );
+                  } else {
+                    return MyButton(
+                      buttonText: buttons[index],
+                      color: isOperator(buttons[index])
+                          ? Colors.deepPurple
+                          : Colors.deepPurple[50],
+                      textColor: isOperator(buttons[index])
+                          ? Colors.white
+                          : Colors.deepPurple,
+                    );
+                  }
                 },
               ),
             ),
@@ -85,7 +99,7 @@ class HomePageState extends State<HomePage> {
   }
 
   bool isOperator(String x) {
-    if (x == '%' || x == '/' || x == '-' || x == '+' || x == '=') {
+    if (x == '%' || x == '/' || x == '-' || x == 'X' || x == '+' || x == '=') {
       return true;
     }
 
