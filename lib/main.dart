@@ -61,12 +61,15 @@ class HomePageState extends State<HomePage> {
             flex: 2,
             child: Container(
               child: GridView.builder(
+                itemCount: buttons.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 4,
                 ),
-                itemBuilder: (BuildContext context, int intex) {
+                itemBuilder: (BuildContext context, int index) {
                   return MyButton(
-                    buttonText: ,
+                    buttonText: buttons[index],
+                    color: Colors.deepPurple,
+                    textColor: Colors.white,
                   );
                 },
               ),
