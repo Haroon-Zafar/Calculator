@@ -25,13 +25,27 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  
   final List<String> buttons = [
-    "C", "DEL","%","/",
-    "9", "8", "7", "X",
-    "6", "5", "4", "-",
-    "3", "2", "1", "+",
-    "0", ".", "ANS", "=",
+    "C",
+    "DEL",
+    "%",
+    "/",
+    "9",
+    "8",
+    "7",
+    "X",
+    "6",
+    "5",
+    "4",
+    "-",
+    "3",
+    "2",
+    "1",
+    "+",
+    "0",
+    ".",
+    "ANS",
+    "=",
   ];
 
   @override
@@ -46,8 +60,13 @@ class HomePageState extends State<HomePage> {
           Expanded(
             flex: 2,
             child: Container(
-              child: Center(
-                child: 
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
+                ),
+                itemBuilder: (BuildContext context, int intex) {
+                  return MyButton();
+                },
               ),
             ),
           ),
